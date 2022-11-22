@@ -4,6 +4,7 @@
     "ghcr.io/devcontainers/features/java:1": {
       "installGralde": true,
       "jdkDistro": "open"
-    }
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {}
   }
 }
