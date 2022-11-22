@@ -1,0 +1,7 @@
+services:
+  wildfly:
+    image: quay.io/wildfly/wildfly
+    ports:
+      - "80:8080"
+    volumes:
+      - "./build/libs/ROOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war"
