@@ -26,7 +26,7 @@ dependencies {
     // implementation("org.postgresql:postgresql:42.2.23")
 
     // jakarta servlet api
-    compileOnly("jakarta.servlet:jakarta.servlet-api:5.0.0")
+    compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
     // jakarta persistence api
     // compileOnly("jakarta.persistence:jakarta.persistence-api:3.0.0")
 }
