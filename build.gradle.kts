@@ -21,12 +21,11 @@ tasks.war {
 }
 
 
-// add postgres jdbc
 dependencies {
-    // implementation("org.postgresql:postgresql:42.2.23")
-
-    // jakarta servlet api
+    // jakartaee apis
     compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
-    // jakarta persistence api
-    // compileOnly("jakarta.persistence:jakarta.persistence-api:3.0.0")
+    compileOnly("jakarta.faces:jakarta.faces-api:4.0.1")
+    compileOnly("jakarta.inject:jakarta.inject-api:2.0.1")
+    compileOnly("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
+    compileOnly("jakarta.persistence:jakarta.persistence-api:3.0.0")
 }
