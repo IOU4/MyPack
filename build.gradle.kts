@@ -15,9 +15,14 @@ repositories {
     mavenCentral()
 }
 
-// set war name to ROOT
+tasks.register<Exec>("redeploy") {
+    commandLine("docker", "exec", "mypack-wildfly-1", "/opt/jboss/wildfly/bin/jboss-cli.sh", "-c", "/deployment=ROOT.war:redeploy")
+}
+
 tasks.war {
   archiveFileName.set("ROOT.war")
+  // exute redeploy task after war task
+  // finalizedBy("redeploy")
 }
 
 
@@ -29,3 +34,4 @@ dependencies {
     compileOnly("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
     compileOnly("jakarta.persistence:jakarta.persistence-api:3.0.0")
 }
+
