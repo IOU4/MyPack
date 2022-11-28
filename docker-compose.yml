@@ -1,3 +1,5 @@
+version: "3.1"
+
 services:
   wildfly:
     image: quay.io/wildfly/wildfly:27.0.0.Final-jdk17 
@@ -6,3 +8,13 @@ services:
       - "9990:9990"
     volumes:
       - "./build/libs/ROOT.war:/opt/jboss/wildfly/standalone/deployments/ROOT.war"
+    env_file: .env
+  
+  mariadb:
+    image: mariadb:10.10
+    volumes:
+      - "database:/var/lib/mysql"
+    env_file: .env
+
+volumes:
+  database: 

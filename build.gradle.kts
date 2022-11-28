@@ -20,11 +20,10 @@ tasks.register<Exec>("redeploy") {
 }
 
 tasks.war {
-  archiveFileName.set("ROOT.war")
-  // exute redeploy task after war task
-  // finalizedBy("redeploy")
+    archiveFileName.set("ROOT.war")
+    // exute redeploy task after war task
+    // finalizedBy("redeploy")
 }
-
 
 dependencies {
     // jakartaee apis
@@ -33,5 +32,8 @@ dependencies {
     compileOnly("jakarta.inject:jakarta.inject-api:2.0.1")
     compileOnly("jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1")
     compileOnly("jakarta.persistence:jakarta.persistence-api:3.0.0")
-}
+    runtimeOnly("org.hibernate:hibernate-orm-jbossmodules:5.4.33")
 
+    // mariadb jdbc driver
+    runtimeOnly("org.mariadb.jdbc:mariadb-java-client:3.1.0")
+}
