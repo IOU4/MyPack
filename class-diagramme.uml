@@ -1,0 +1,44 @@
+@startuml
+abstract employee
+entity manager
+entity stock
+entity stock_products
+
+entity product
+employee <|-- manager
+employee <|-- driver
+stock "1" <-- "0-1" manager : < manages 
+stock "1-*" --> "1" stock_products  
+product "1" --> "1" stock_products 
+order "1-*" <-- "1-*" order_products
+product "1-*" --> "1-*" order_products
+car <-- stock : < has
+car --> driver : has >
+
+employee : name
+employee : email
+employee : psswd
+
+stock_products : quantity
+
+order_products : quantity
+
+car : ref
+car : mark
+car : capacity
+
+product : ref
+product : weight
+product : price
+product : status
+
+
+manager : product_crud()
+
+stock : capacity
+stock : address
+
+order : address
+order : customer
+order : status
+@enduml
