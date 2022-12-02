@@ -6,14 +6,15 @@
 <h:body>
   <h:form>
     <h:outputLabel for="name" value="Enter your name" required="true" />
-    <h:inputText id="name" value="#{hello.name}" />
-    <h:message for="name" />
+    <h:inputText id="name" value="#{ttrr.name}" required="true" />
+    <h:inputText id="age" value="#{ttrr.age}"/>
+    <h:messages/>
     <br />
-    <h:commandButton value="Say hello" action="#{hello.createMessage}">
+    <h:commandButton value="Say hello" action="#{ttrr.formatMessage()}">
       <f:ajax execute="@form" render="@form" />
     </h:commandButton>
     <br />
-    #{hello.message}
+    #{ttrr.message}
   </h:form>
 </h:body>
 
