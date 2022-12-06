@@ -1,9 +1,10 @@
-package mypack.Faces;
+package mypack.Beans;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
+import mypack.Config.Config;
 
-@Named(value = "ttrr")
+@Named(value = "hello")
 @RequestScoped
 public class Hello {
 
@@ -36,6 +37,13 @@ public class Hello {
   }
 
   public void formatMessage() {
+    var em = Config.getInstance().getEm();
+    em.getTransaction().begin();
+    var query = em.createNativeQuery("select * from test");
+    var res = query.getResultList();
+    res.forEach(r -> System.out.println(r));
+    em.getTransaction().commit();
+    em.close();
     message = String.format("Who are you %s?", name);
   }
 

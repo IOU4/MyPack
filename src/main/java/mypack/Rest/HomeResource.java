@@ -11,7 +11,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Application;
 import jakarta.ws.rs.core.MediaType;
-import mypack.Faces.GreetingService;
+import mypack.Beans.GreetingService;
 
 @ApplicationPath("/api")
 @Path("/greet")

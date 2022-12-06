@@ -1,4 +1,4 @@
-package mypack.Faces;
+package mypack.Beans;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
